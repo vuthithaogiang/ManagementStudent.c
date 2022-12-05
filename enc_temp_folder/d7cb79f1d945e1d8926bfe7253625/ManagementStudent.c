@@ -294,7 +294,7 @@ void sortListStudentByGPA(Student* students, const int size) {
 
 	for (int i = 0; i < size - 1; i++) {
 
-		for (int j = size -1; j > i; j--) {
+		for (int j = size; j > i; j--) {
 
 			if (students[j - 1].gpa < students[j].gpa) {
 
@@ -308,14 +308,13 @@ void sortListStudentByGPA(Student* students, const int size) {
 void sortListStudentsByGPAAndName(Student* students, const int size) {
 
 	for (int i = 0; i < size - 1; i++) {
-		for (int j = size - 1; j > i; j--) {
-
+		for (int j = size - 1; j > i; j++) {
 			if (students[j - 1].gpa < students[j].gpa) {
 
 				swap(&students[j - 1], &students[j]);
 			}
 
-			else if (students[j - 1].gpa == students[j].gpa) {
+			if (students[j - 1].gpa == students[j].gpa) {
 
 				char lastNameFirst[10];
 				char midNameFirst[20];
